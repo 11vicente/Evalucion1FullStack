@@ -1,0 +1,58 @@
+/* ==============================
+   Estilos Globales
+   ============================== */
+body {
+  background-color: #FFF5E1; /* Crema pastel */
+  font-family: 'Lato', sans-serif;
+  color: #5D4037; /* Marrón Oscuro */
+}
+h1, h2, h3, .section-title {
+  font-family: 'Pacifico', cursive;
+}
+.section-hero {
+  background-color: #8B4513; /* Chocolate */
+  color: #FFF5E1; /* Texto claro */
+}
+/* ==============================
+   Navbar
+   ============================== */
+.navbar {
+  background-color: #8B4513; /* Chocolate */
+}
+.navbar-brand, .nav-link {
+  color: #FFF5E1 !important;
+}
+.nav-link:hover, .nav-link.active {
+  color: #FFC0CB !important; /* Rosa suave */
+}
+
+/* ==============================
+   Botones
+   ============================== */
+.btn-custom {
+  background-color: #FFC0CB;
+  color: #5D4037;
+  border: none;
+}
+.btn-custom:hover {
+  background-color: #8B4513;
+  color: #FFF5E1;
+}
+
+/* ==============================
+   Footer
+   ============================== */
+footer {
+  background-color: #8B4513;
+  color: #FFF5E1;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+/* ==============================
+   Tarjetas Blog
+   ============================== */
+.card-text {
+  color: #B0BEC5; /* Texto secundario */
+}
