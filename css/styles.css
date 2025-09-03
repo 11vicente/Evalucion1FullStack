@@ -38,6 +38,23 @@ h1, h2, h3, .section-title {
   background-color: #8B4513;
   color: #FFF5E1;
 }
+button,
+.btn {
+  background-color: #FFC0CB; /* Rosa suave */
+  color: #5D4037;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #8B4513;
+  color: #FFF5E1;
+}
 
 /* ==============================
    Footer
@@ -55,4 +72,38 @@ footer {
    ============================== */
 .card-text {
   color: #B0BEC5; /* Texto secundario */
+}
+/* ==============================
+   Formularios
+   ============================== */
+form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px s#8B4513;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #8B4513;
 }

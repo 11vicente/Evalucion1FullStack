@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Online - Registro</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg ">
+      <div class="container">
+        <a class="navbar-brand fs-3" href="index.html">
+            <img src="img/logo2.png" alt="Pastelería Mil Sabores" width="80" height="80" class="d-inline-block align-text-top">
+            PASTELERIA MIL SABORES
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">🛒 Carrito</a></li>
+          </ul>
+          <div class="d-flex ms-3">
+            <a href="login.html" class="btn btn-custom me-2">Iniciar Sesión</a>
+            <a href="registro.html" class="btn btn-outline-light">Registrar</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <h1 class="titulo text-center mt-4">Registro de Usuario</h1>
+
+  <main>
+    <section class="registro-container container my-4">
+      <form id="registroForm">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="confirmarCorreo">Confirmar correo</label>
+        <input type="email" id="confirmarCorreo" name="confirmarCorreo" required>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" minlength="6" required>
+
+        <label for="confirmarPassword">Confirmar contraseña</label>
+        <input type="password" id="confirmarPassword" name="confirmarPassword" required>
+
+        <label for="telefono">Teléfono (opcional)</label>
+        <input type="tel" id="telefono" name="telefono" maxlength="9">
+
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" name="edad" min="1" required maxlength="2">
+
+        <label for="codigo">Código de Descuento</label>
+        <input type="text" id="codigo" name="codigo" placeholder="Ej: FELICES50">
+
+        <label for="region">Región</label>
+        <select id="region" name="region" required>
+          <option value="">-- Seleccione la región --</option>
+          <option value="RMS">Región Metropolitana de Santiago</option>
+          <option value="Araucania">Región de la Araucanía</option>
+          <option value="Nuble">Región de Ñuble</option>
+        </select>
+
+        <label for="comuna">Comuna</label>
+        <select id="comuna" name="comuna" required>
+          <option value="">-- Seleccione la comuna --</option>
+        </select>
+  
+        <button type="submit" class="btn btn-primary mt-3">Registrar</button>
+      </form>
+
+      <div id="mensaje" class="mensaje mt-3"></div>
+    </section>
+  </main>
+
+  <!-- Footer  -->
+  <footer class=" text-light py-4 mt-5">
+    <div class="container text-center">
+      <p class="mb-1">&copy; 2025 Pastelería Mil Sabores. Todos los derechos reservados.</p>
+      <p class="mb-0">
+        <a href=# class="text-decoration-none text-light">Política de Privacidad</a> | 
+        <a href=# class="text-decoration-none text-light">Términos y Condiciones</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script de validaciones -->
+  <script src="validaciones.js"></script>
+</body>
+</html>
