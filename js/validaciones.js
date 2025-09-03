@@ -1,3 +1,5 @@
+console.log("validaciones.js cargado ✅");
+
 document.getElementById("registroForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -9,10 +11,18 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
   const edad = parseInt(document.getElementById("edad").value);
   const codigo = document.getElementById("codigo").value.trim().toUpperCase();
   const mensaje = document.getElementById("mensaje");
-    
+
   // Validaciones básicas
   if (correo !== confirmarCorreo) {
     mensaje.textContent = "❌ Los correos no coinciden.";
+    mensaje.style.color = "red";
+    return;
+  }
+
+  //  Validación de dominio de correo permitido
+  const regexCorreo = /^[\w.-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
+  if (!regexCorreo.test(correo)) {
+    mensaje.textContent = "❌ Solo se permiten correos @duoc.cl, @profesor.duoc.cl y @gmail.com";
     mensaje.style.color = "red";
     return;
   }
@@ -25,7 +35,6 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
 
   // Reglas especiales
   let beneficio = "";
-  if (telefono )
 
   if (edad >= 50) {
     beneficio = "🎉 Descuento del 50% por ser mayor de 50 años.";
@@ -35,7 +44,7 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
     beneficio = "🎉 Descuento del 10% de por vida con el código FELICES50.";
   }
 
-  if (correo.endsWith("@duocuc.cl")) {
+  if (correo.endsWith("@duoc.cl")) {
     beneficio = "🎂 ¡Torta gratis en tu cumpleaños por ser estudiante Duoc!";
   }
 
@@ -45,10 +54,9 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
 
   mensaje.textContent = beneficio;
   mensaje.style.color = "green";
-
-  
 });
- //filtro de solo números
+
+// Filtro de solo números
 document.querySelectorAll("input[data-numerico]").forEach(input => {
   input.addEventListener("keypress", function(e) {
     if (!/[0-9]/.test(e.key)) {
@@ -56,7 +64,8 @@ document.querySelectorAll("input[data-numerico]").forEach(input => {
     }
   });
 });
-//  Regiones y Comunas relacionadas
+
+// Regiones y Comunas relacionadas
 const comunasPorRegion = {
   "RMS": ["Santiago", "Puente Alto", "Maipú", "La Florida", "Las Condes"],
   "Araucania": ["Temuco", "Villarrica", "Pucón", "Angol"],
@@ -68,10 +77,9 @@ const comunaSelect = document.getElementById("comuna");
 
 regionSelect.addEventListener("change", function() {
   const regionSeleccionada = this.value;
-  
-  // Reinicia el select de comunas
+
   comunaSelect.innerHTML = '<option value="">-- Seleccione la comuna --</option>';
-  
+
   if (regionSeleccionada && comunasPorRegion[regionSeleccionada]) {
     comunasPorRegion[regionSeleccionada].forEach(comuna => {
       const option = document.createElement("option");
