@@ -26,14 +26,14 @@ document.getElementById("registroForm").addEventListener("submit", function(e) {
     mensaje.style.color = "red";
     return;
   }
-
+  
   if (password !== confirmarPassword) {
     mensaje.textContent = "❌ Las contraseñas no coinciden.";
     mensaje.style.color = "red";
     return;
   }
 
-  // Reglas especiales
+  // Dctos
   let beneficio = "";
 
   if (edad >= 50) {
