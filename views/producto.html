@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Producto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg      navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">Pastelería Mil Sabores</a>
+        <a class="btn btn-light" href="productos.html">⬅ Volver a productos</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido del producto -->
+  <div class="container my-5">
+    <div id="productoDetalle" class="row">
+      <!-- Aquí se cargará dinámicamente el producto -->
+    </div>
+  </div>
+
+  <footer class="text-center py-4 ">
+    <p>&copy; 2025 Pastelería Mil Sabores. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Simulación de base de datos de productos
+   const productos = [
+  {id: 1, nombre: "Torta Cuadrada de Chocolate", descripcion: "Deliciosa torta de chocolate con capas de ganache y un toque de avellanas.", precio: "$12.000", img: "../img/pastel-chocolate-decadente-sinfonia-marron_632498-24549.jpg"},//111
+  {id: 2, nombre: "Torta Cuadrada de Frutas", descripcion: "Bizcocho de vainilla con frutas frescas y crema chantilly.", precio: "$11.500", img: "../img/cuadrad de frutas.png"},//1111
+  {id: 3, nombre: "Torta Circular de Vainilla", descripcion: "Bizcocho clásico con crema pastelera y glaseado dulce.", precio: "$10.000", img: "../img/vainilla.png"},//11111111
+  {id: 4, nombre: "Torta Circular de Manjar", descripcion: "Tradicional chilena con manjar y nueces.", precio: "$10.500", img: "../img/tortaManjar.png"},//111111
+  {id: 5, nombre: "Mousse de Chocolate", descripcion: "Postre cremoso hecho con chocolate de alta calidad.", precio: "$4.500", img: "../img/mouseChoco.png"},
+  {id: 6, nombre: "Tiramisú Clásico", descripcion: "Capas de café, mascarpone y cacao.", precio: "$5.000", img: "../img/tiramisu.png"},//11111111
+  {id: 7, nombre: "Torta Sin Azúcar de Naranja", descripcion: "Ligera, deliciosa y endulzada naturalmente.", precio: "$9.000", img: "../img/TORTAnaranaja.png"},//11111
+  {id: 8, nombre: "Cheesecake Sin Azúcar", descripcion: "Suave y cremoso, ideal para disfrutar sin culpa.", precio: "$9.500", img: "../img/cheeseCakesSinAz.png"},//1111111
+  {id: 9, nombre: "Empanada de Manzana", descripcion: "Rellena de manzanas especiadas, perfecta para la merienda.", precio: "$3.500", img: "../img/emapanaanazanam.png"},//11111111111
+  {id: 10, nombre: "Tarta de Santiago", descripcion: "Tarta española con almendras, azúcar y huevos.", precio: "$7.500", img: "../img/santiaago.png"},//11111
+  {id: 11, nombre: "Brownie Sin Gluten", descripcion: "Denso y delicioso, ideal para celíacos.", precio: "$4.800", img: "../img/brownie (1).png"},//1111111
+  {id: 12, nombre: "Pan Sin Gluten", descripcion: "Suave y esponjoso, ideal para acompañar comidas.", precio: "$4.000", img: "../img/singluten.png"},//11111
+  {id: 13, nombre: "Torta Vegana de Chocolate", descripcion: "Húmeda y deliciosa, sin productos animales.", precio: "$11.000", img: "../img/tortaVChocolate.png"},//111111
+  {id: 14, nombre: "Galletas Veganas de Avena", descripcion: "Crujientes, sabrosas y saludables.", precio: "$3.800", img: "../img/galletasAvena.png"},//111111111
+  {id: 15, nombre: "Torta Especial de Cumpleaños", descripcion: "Personalizable con decoraciones y mensajes únicos.", precio: "$18.000", img: "../img/cumple.png"},//111111111
+  {id: 16, nombre: "Torta Especial de Boda", descripcion: "Elegante y deliciosa, pensada para celebraciones únicas.", precio: "$20.000", img: "../img/boda.png"}//11111111
+];
+
+    
+
+    //  Obtener ID de la URL
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get("id"));
+
+    //  Buscar el producto
+    const producto = productos.find(p => p.id === id);
+
+    //  Renderizar el producto
+    const container = document.getElementById("productoDetalle");
+    if (producto) {
+      container.innerHTML = `
+        <div class="col-md-6">
+          <img src="${producto.img}" alt="${producto.nombre}" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6">
+          <h2>${producto.nombre}</h2>
+          <p>${producto.descripcion}</p>
+          <h4 class="text-success">${producto.precio}</h4>
+          <button class="btn btn-primary btn-lg mt-3">🛒 Agregar al carrito</button>
+        </div>
+      `;
+    } else {
+      container.innerHTML = `<p class="text-danger">❌ Producto no encontrado.</p>`;
+    }
+  </script>
+</body>
+</html>
